@@ -1,0 +1,15 @@
+services:
+  database-ku:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: belajar_docker
+    volumes:
+      - mysql_data:/var/lib/mysql
+  adminer-ku:
+    image: adminer
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql_data:
